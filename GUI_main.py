@@ -93,22 +93,38 @@ while True:
 
     #underdeveloped
     elif target == "Open file":
+        file_name = sg.popup_get_text(message="Enter file name that exists in curent directrory\n{}".format(current_dir),
+            title=None,
+            default_text="",
+            password_char="",
+            size = (None, None),
+            button_color = None,
+            background_color = None,
+            text_color = None,
+            icon = None,
+            font = None,
+            no_titlebar = False,
+            grab_anywhere = False,
+            keep_on_top = False,
+            location = (None, None),
+            image = None,
+            modal = True
+        )
+        print(file_name)
         for scan in os.scandir():
             if scan.is_dir():
                 continue
             file_path = str(Path(scan))
             
             f_format = file_path.split(".")[1]
-            #i know theres more i just dont want to lkist them all
+            #i know theres more i just dont want to list them all
             #photoshop opening is coming out soon
             notepad_list = [".txt", ".py", ".js", ".r", ".java", ".cpp", ".c", ".h", ".i", ".pyw", ".go", ".ts", ".tsx"]
             for i in notepad_list:
                 file_paths = Path(scan)
-                if file_paths.is_dir():
-                    program_open = "notepad.exe"
-                    file_dir = "{}\\{}".format(current_dir, file_paths)
-                    print(file_dir)
-        sp.Popen([program_open, file_dir])
+                if f_format == ".psd" or f_format == ".ps":
+                    program_to_open = "photoshop"
+        sp.Popen(["notepad.exe", "{}\\{}".format(current_dir, file_name)])
 
 
 window.close()                                                                                          
