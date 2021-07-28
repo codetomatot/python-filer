@@ -1,5 +1,4 @@
 # python-filer
-What this will do is scan your current directory and take your file input (must be a real file and dont forget to add the file format). It will take the file input and find the folder that has a similar name (SequenceMatcher) and will automatically put you input into that folder. In the beginning make sure to specify how many files you want to put in.
+What this will do is scan your current directory and wait until a file is created or modded to make changes to the directory. When a file is modified it will look for a folder in the already specified directory and compare the folders name to the files name and depending on how close the ratio and which ratio is largest out of all the other folders, it will send the file into the folder with the best fit/ biggest ratio.
 
-
-NEW: using watchdog and pysimplegui it is now possible to run this in the background while it automatically sorts the files after there is a mod or it is saved. Works on most apps
+also comes with a GUI and uses threading to make it as fast as possible.
