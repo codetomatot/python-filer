@@ -78,14 +78,4 @@ event_handler = CatHandler()
 observer.schedule(event_handler, current_dir, recursive=True)
 observer.start()
         
-try:
-    while True:
-        time.sleep(10)
-except:
-    observer.stop()
-    print("observer stopping...")
-observer.join()
-
-
-if __name__ == "__main__":
-    CatFiles().run()
+CatFiles().run()
