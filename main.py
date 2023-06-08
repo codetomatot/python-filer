@@ -9,7 +9,6 @@ current_dir = os.getcwd()
 
 list_of_files = []
 folder_list = []
-list_numbers = [4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
 class CatFiles:
     def __init__(self):
@@ -39,7 +38,7 @@ class CatHandler(FileSystemEventHandler):
             print("modded")
             
             new_file = event.src_path
-            for i in list_numbers:
+            for i in range(4,21):
                 updated = new_file.split("\\")
                 dir_length = len(updated)
                 if i == dir_length:
